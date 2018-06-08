@@ -1,0 +1,20 @@
+---
+- name: config | Updating Local Repo Info
+  command: "createrepo -v {{ item['dest'] }}"
+  become: true
+  with_items: "{{ offline_yum_repo_mirrors }}"
+
+- name: config | Ensuring Distro Web Directories Exist
+  file:
+    path: "/var/www/html/{{ item['distro'] }}"
+    state: directory
+  become: true
+  with_items: "{{ offline_yum_repo_mirrors }}"
+
+- name: config | Configuring Web Links
+  file:
+    src: "{{ item['dest'] }}"
+    dest: "/var/www/html/{{ item['distro'] }}/{{ item['version'] }}"
+    state: link
+  become: true
+  with_items: "{{ offline_yum_repo_mirrors }}"

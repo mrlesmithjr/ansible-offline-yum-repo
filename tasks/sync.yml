@@ -1,0 +1,5 @@
+---
+- name: sync | Syncing Repositories
+  command: "rsync -avz {{ item['repo'] }} {{ item['dest'] }}"
+  become: true
+  with_items: "{{ offline_yum_repo_mirrors }}"

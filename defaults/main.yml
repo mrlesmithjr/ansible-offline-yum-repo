@@ -1,0 +1,12 @@
+---
+# defaults file for ansible-offline-yum-repo
+
+offline_yum_repo_mirrors:
+  - repo: rsync://rsync.gtlib.gatech.edu/centos/7/os/x86_64/Packages/
+    dest: /opt/yum/centos-7
+    distro: CentOS
+    version: 7
+  - repo: rsync://rsync.gtlib.gatech.edu/centos/6/os/x86_64/Packages/
+    dest: /opt/yum/centos-6
+    distro: CentOS
+    version: 6

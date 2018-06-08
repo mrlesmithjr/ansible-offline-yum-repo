@@ -1,0 +1,7 @@
+---
+# tasks file for ansible-offline-yum-repo
+- include_tasks: install.yml
+
+- include_tasks: sync.yml
+
+- include_tasks: config.yml
