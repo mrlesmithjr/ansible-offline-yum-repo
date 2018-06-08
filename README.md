@@ -9,7 +9,7 @@ You must configure your clients to use this hosted offline repo(use example belo
 `/etc/yum.repos.d/offline-yum.repo`:
 
 ```bash
-[Offline YUM]
+[OfflineYUM]
 name=Local YUM
 baseurl=http://192.168.1.100/CentOS/7
 gpgcheck=0
